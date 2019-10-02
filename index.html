@@ -5,15 +5,23 @@
     <title>Hello World</title>
   </head>
   <body>
-    <h1>Hello Samson</h1>
-    <input type="text" name="search" value="" id="search">
-    <input type="submit" name="" value="" onclick="useReact()">
-    <div id="answer">
+      <h1>Hello Samson</h1>
+    
 
-    </div>
 
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-  <script src="/answer.js"></script>
-  </body>
+      <form action="/query" method="POST" name="query_selection">
+          <input type="text" name="user" value="" id="">
+          <input type="text" name="number" value="" id="">
+
+          <input type="submit" name="" value="Submit" onclick="" method='POST'>
+      </form>
+
+      <div id="answer">
+
+      </div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="/answer.js"></script>
+    </body>
 </html>
