@@ -1,14 +1,11 @@
 //const submitAnswer = document.querySelector('#answer')
 var http = require("http");
+var express = require('express');
+var app = express();
 var port = 9000;
 
-http.createServer(function (request, response) {
+app.get('/', function(request, response){
+    response.sendFile(__dirname + '/index.html');
+});
 
-    response.writeHead(200, {'Content-Type': 'text/htmml'});
-    response.write('Work')
-    response.end();
-
-}).listen(port); //in tutorial it's port 8081
-
-console.log('asdf');
-
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
