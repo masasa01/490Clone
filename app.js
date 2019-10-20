@@ -3,7 +3,7 @@ var http = require("http");
 var express = require('express');
 var app = express();
 const { parse } = require('querystring');
-var port = 9000;
+var port = process.env.PORT || 9000;
 
 app.get('/', function(request, response){
     response.sendFile(__dirname + '/index.html');
