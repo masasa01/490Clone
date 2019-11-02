@@ -1,34 +1,36 @@
-//const submitAnswer = document.querySelector('#answer')
-var http = require("http");
 var express = require('express');
 var app = express();
-const { parse } = require('querystring');
-var port = process.env.PORT || 9000;
+var router = express.Router();
+var cors = require('cors');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
 
-app.get('/', function(request, response){
-    response.sendFile(__dirname + '/index.html');
+app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(logger('dev'));
+
+var name;
+var id;
+var form_fields = {name, id};
+var formdata = [];
+
+router.get("/get", (request, response) => {
+  var output = formdata.pop();
+  return response.json({ output });
 });
 
-app.post('/query', function(request, response){
+router.post('/post', (request, response) => {
+  form_fields.name = request.body.name;
+  form_fields.id = request.body.id;
+  formdata.push(form_fields);
 
-    let body = '';
-    request.on('data', chunk => {
-        body += chunk.toString(); // convert Buffer to string
-    });
-    request.on('end', () => {
-        console.log(parse(body));
-        console.log('');
-        console.log(parse(body.user));
-        console.log('');
-        var x = parse(body);
-        console.log(x);
-        console.log(x.number);
-
-        response.end('ok');
-    });
-
-    
-
+  return response.json({ success: "We Posted" });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.use('/api', router);
+
+app.listen(3001, function () {
+  console.log('Example app listening on port 3001!');
+});
