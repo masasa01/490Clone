@@ -1,23 +1,27 @@
 {
-  "name": "demo",
+  "name": "CS490",
   "version": "1.0.0",
-  "description": "Senior Project",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"cd backend && node app.js\" \"cd frontend && npm start\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NateDen/CS490.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NateDen/CS490/issues"
   },
   "homepage": "https://github.com/NateDen/CS490#readme",
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  },
   "dependencies": {
-    "express": "^4.17.1",
-    "mongodb": "^3.3.3"
+    "bootstrap": "^4.3.1",
+    "react-bootstrap": "^1.0.0-beta.14"
   }
 }
