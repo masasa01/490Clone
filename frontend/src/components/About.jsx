@@ -11,7 +11,7 @@ class About extends Component {
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="./network.jpg"
+                        src="network.jpg"
                         alt="We strive in exellence"
                         />
                         <Carousel.Caption>
@@ -22,7 +22,7 @@ class About extends Component {
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="./././pictures/tutoring-photo-1"
+                        src="tutoring-photo-1.jpg"
                         alt="A massive network"
                         />
 
