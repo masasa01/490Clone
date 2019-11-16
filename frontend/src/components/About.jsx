@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+const networkPhoto = require('./pics/network-photo-1.jpg');
+const excellencePhoto = require('./pics/test-photo-1.jpg');
+const tutoringPhoto = require('./pics/tutoring-photo-1.jpg');
+
 
 
 class About extends Component {
@@ -10,8 +14,8 @@ class About extends Component {
                 <Carousel>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="network.jpg"
+                        className="l-block w-100"
+                        src={excellencePhoto}
                         alt="We strive in exellence"
                         />
                         <Carousel.Caption>
@@ -21,8 +25,8 @@ class About extends Component {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="tutoring-photo-1.jpg"
+                        className="l-block w-100"
+                        src={networkPhoto}
                         alt="A massive network"
                         />
 
@@ -33,8 +37,8 @@ class About extends Component {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="./././pictures/tutoring-photo-1"
+                        className="l-block w-100"
+                        src={tutoringPhoto}
                         alt="Guaranteed Success"
                         />
 

@@ -4,11 +4,15 @@ import axios from 'axios';
 
 const Row = props => (
    <tr>
-      <td>props.tutors.id</td>
-      <td>props.tutors.subject</td>
-      <td>props.tutors.location</td>
-      <td>props.tutors.time</td>
+      <td>{props.row.id}</td>
+      <td>{props.row.subject}</td>
+      <td>{props.row.location}</td>
+      <td>{props.row.time}</td>
    </tr>
+)
+
+const Header = props => (
+   <h1>{props.value}</h1>
 )
 
 class TableComponent extends Component {
@@ -30,28 +34,31 @@ class TableComponent extends Component {
    }
 
    rowGenerator() {
-      return this.state.tutors.map(currentRow => {
-         return <Row row={currentRow} key={currentRow._id} />
+      return this.state.tutors.map((currentRow, index) => {
+         return <Row row={currentRow} key={index} />;
       })
    }
-  
-     render() {
-        return (
-           <div>
-              <h1>Tutor Information</h1>
-              <Table>
-                 <thead>
-                    <tr>
-                       <th>ID</th>
-                       <th>Subject</th>
-                       <th>Location</th>
-                       <th>Time</th>
-                    </tr>
-                 </thead>
-              </Table>
-           </div>
-        )
-     }
+
+   render() {
+      return (
+         <div>
+            <h1>Tutor Information</h1>
+            <Table>
+               <thead>
+                  <tr>
+                     <th>ID</th>
+                     <th>Subject</th>
+                     <th>Location</th>
+                     <th>Time</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  { this.rowGenerator() }
+               </tbody>
+            </Table>
+         </div>
+      )
+   }
 }
 
 export default TableComponent;
